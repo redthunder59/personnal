@@ -25,9 +25,11 @@
         </section>
         <section>
             <h2>Question 4</h2>
-            <?php for($i = 0;$i < 5;$i++){
-                    echo $texte."<br>";
-            }?>
+            <?php
+            for($i = 0;$i < 5;$i++){
+              echo $texte."<br>";
+            }
+            ?>
         </section>
         <section>
             <h2>Question 5</h2>
@@ -53,15 +55,53 @@
         <section>
             <h2>Question 7</h2>
             <?php
-            echo "<ul>";
-            for($l = 1;$l<10;$l++){
-              echo "<li>"." 2 * ".$l." = ".$l*2;
+            //fonction qui retourne la multiplication entre deux nombres entrés en parametre
+            function multiplication($int,$entier){
+              return "<li>".$int." * ".$entier ." = ".$int*$entier;
             }
-            echo "</ul>";
-            ;?>
+            //fonction qui retourne la table de multiplication d'un entier donné en parametre
+            function tableMultiplications($int){
+              $resultat = "";
+              for($l=1;$l<10;$l++){
+                $resultat .= multiplication($int,$l)."<br>";
+              }
+              return "<ul>"."<br>".$resultat."</ul>";
+            }
+            echo tableMultiplications(2);
+            ?>
         </section>
         <section>
-            <h2>Question 4</h2>
+            <h2>Question 8</h2>
+            <?php
+            function tablesMultiplications(){
+              $result = "";
+              for($m=1;$m<10;$m++){
+                $result .= tableMultiplications($m);
+              }
+              return $result;
+            }
+            echo tablesMultiplications();
+            ?>
+        </section>
+        <section>
+            <h2>Question 9</h2>
+            <?php
+            function ligne_multi(){
+              $result = "<table>"."<tbody>";
+
+              for($z=1;$z<10;$z++){
+                $result .= "<tr>"."<th> ".$z." </th>";
+                for($y=1;$y<10;$y++){
+                  $result .= "<th> ".$z*$y." <th>";
+                }
+                $result.= "<tr>"."<br>";
+              }
+              $result.= "</tbody>"."</table>";
+              return $result;
+            }
+            echo ligne_multi();
+            ?>
+
         </section>
     </body>
 </html>

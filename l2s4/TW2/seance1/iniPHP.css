@@ -29,10 +29,9 @@ section h2 {
   padding : 3pt;
 }
 
-table#multiplications {
-    border-collapse : collapse;
+table {
 }
-table#multiplications td {
+table td {
     border : solid 1pt;
     text-align : center;
     padding : 1mm;
